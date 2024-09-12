@@ -1,0 +1,46 @@
+<div class="bg-gray-600 px-3 py-2 rounded-md shadow-md shadow-gray-400">
+  <!--PANTALLA-->
+  <section>
+    <app-pantalla [entradas]="cadena_operacion"/>
+  </section>
+
+  <!--TECLA-->
+  <section>
+    <!--FILA-->
+    <app-fila>
+      <app-tecla-operador [contenidoOperador]="operadores[5]" (salidaOperador)="mostrarOperador($event)"/>
+      <button type="button" class="bg-blue-900 rounded-md text-center w-20 h-8 text-xl py-5 flex justify-center items-center hover:bg-blue-600" (click)="limpiarPantalla()">CE
+        </button>
+        <button type="button" class="bg-blue-900 rounded-md text-center w-20 h-8 text-xl py-5 flex justify-center items-center hover:bg-blue-600" (click)="limpiarPantalla()">C
+        </button>
+        <app-tecla-operador [contenidoOperador]="operadores[4]" (salidaOperador)="mostrarOperador($event)" />
+    </app-fila>
+
+    <!--FILA NUMERICA-->
+    <app-fila>
+      <app-tecla-numerica [contenido]="numeros[7]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-numerica [contenido]="numeros[8]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-numerica [contenido]="numeros[9]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-operador [contenidoOperador]="operadores[3]" (salidaOperador)="mostrarOperador($event)"/>
+    </app-fila>
+    <app-fila>
+      <app-tecla-numerica [contenido]="numeros[4]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-numerica [contenido]="numeros[5]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-numerica [contenido]="numeros[6]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-operador [contenidoOperador]="operadores[2]" (salidaOperador)="mostrarOperador($event)"/>
+    </app-fila>
+    <app-fila>
+      <app-tecla-numerica [contenido]="numeros[3]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-numerica [contenido]="numeros[2]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-numerica [contenido]="numeros[1]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-operador [contenidoOperador]="operadores[1]" (salidaOperador)="mostrarOperador($event)"/>
+    </app-fila>
+    <app-fila>
+      <app-tecla-operador [contenidoOperador]="'Borrar'" />
+      <app-tecla-numerica [contenido]="numeros[0]" (salidaNumerica)="mostrarNumerico($event)"/>
+      <app-tecla-operador [contenidoOperador]="'.'" />
+      <button type="button" class="bg-blue-950 rounded-md text-center w-20 h-8 text-xl py-5 flex justify-center items-center hover:bg-blue-600" (click)="calcularResultado()">=
+      </button>
+    </app-fila>
+  </section>
+</div>
